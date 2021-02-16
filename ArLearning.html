@@ -65,9 +65,11 @@
                     const playerContainer = document.createElement("div");
                     // Specify the ID of the DIV container. You can use the `uid` of the remote user.
                     playerContainer.id = user.uid.toString();
-                    playerContainer.style.width = remoteVideoTrack.width;
-                    playerContainer.style.height = remoteVideoTrack.height;
+                    playerContainer.style.width = "480px";
+                    playerContainer.style.height = "640px";
                     document.body.append(playerContainer);
+                    console.log(remoteVideoTrack.height);
+                    console.log(remoteVideoTrack.width);
 
                     // Play the remote video track.
                     // Pass the DIV container and the SDK dynamically creates a player in the container for playing the remote video track.
