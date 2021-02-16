@@ -15,7 +15,6 @@
             options.channel = "agora";
 
             startBasicCall();
-            setInterval();
         };
 
         window.onclose = function() {
@@ -69,10 +68,6 @@
                     playerContainer.style.width = "480px";
                     playerContainer.style.height = "640px";
                     document.body.append(playerContainer);
-                    console.log(user.videoTrack.width);
-                    console.log(user.videoTrack.height);
-                    console.log(user.width);
-                    console.log(user.height);
 
                     // Play the remote video track.
                     // Pass the DIV container and the SDK dynamically creates a player in the container for playing the remote video track.
@@ -101,23 +96,6 @@
                 playerContainer.remove();
             });
             
-            rtc.client.getRemoteVideoStats((remoteVideoStatsMap) => {
-                for(var uid in remoteVideoStatsMap){
-                  console.log(`Video End2EndDelay from ${uid}: ${remoteVideoStatsMap[uid].End2EndDelay}`);
-                  console.log(`Video MuteState from ${uid}: ${remoteVideoStatsMap[uid].MuteState}`);
-                  console.log(`Video PacketLossRate from ${uid}: ${remoteVideoStatsMap[uid].PacketLossRate}`);
-                  console.log(`Video RecvBitrate from ${uid}: ${remoteVideoStatsMap[uid].RecvBitrate}`);
-                  console.log(`Video RecvResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionHeight}`);
-                  console.log(`Video RecvResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionWidth}`);
-                  console.log(`Video RenderFrameRate from ${uid}: ${remoteVideoStatsMap[uid].RenderFrameRate}`);
-                  console.log(`Video RenderResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionHeight}`);
-                  console.log(`Video RenderResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionWidth}`);
-                  console.log(`Video TotalFreezeTime from ${uid}: ${remoteVideoStatsMap[uid].TotalFreezeTime}`);
-                  console.log(`Video TotalPlayDuration from ${uid}: ${remoteVideoStatsMap[uid].TotalPlayDuration}`);
-                  console.log(`Video TransportDelay from ${uid}: ${remoteVideoStatsMap[uid].TransportDelay}`);
-                }
-          });
-
             const uid = await rtc.client.join(options.appId, options.channel, options.token, null);
             // Create an audio track from the audio sampled by a microphone.
             rtc.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack();
