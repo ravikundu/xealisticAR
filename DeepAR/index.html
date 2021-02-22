@@ -140,7 +140,7 @@
       Your browser does not support HTML5 video.
     </video>
     
-    <div class="content">
+    <div class="content" id="btn">
       <button id="myBtn" onclick="myFunction()">Play</button>
     </div>
     
@@ -150,7 +150,8 @@
 
     video.addEventListener('ended',myHandler,false);
     function myHandler(e) {
-      document.getElementById("content").disabled = true;
+      document.getElementById("btn").disabled = true;
+      document.getElementById("myVideo").disabled = true;
     }
     function myFunction() {
       if (video.paused) {
@@ -167,9 +168,9 @@
     <div id="loader-wrapper">
     <span class="loader"></span></span>
     </div>
-
+    <!--
     <div class="effect-carousel">
-      <!--
+      
         <div><img class="thumb" src="thumbs/galaxy.png"></div>
         <div><img class="thumb" src="thumbs/aviators.png"></div>
         <div><img class="thumb" src="thumbs/beard.png"></div>
@@ -179,9 +180,9 @@
         <div><img class="thumb" src="thumbs/lion.png"></div>
         <div><img class="thumb" src="thumbs/teddy_cigar.png"></div>
         <div><img class="thumb" src="thumbs/mask.png"></div>
-      -->
+      
     </div>
-
+    -->
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
