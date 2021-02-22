@@ -147,7 +147,11 @@
     <script>
     var video = document.getElementById("myVideo");
     var btn = document.getElementById("myBtn");
-    
+
+    video.addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+      document.getElementById("content").disabled = true;
+    }
     function myFunction() {
       if (video.paused) {
         video.play();
