@@ -157,6 +157,9 @@
     function myFunction() {
       if (video.paused) {
         video.style.visibility='visible';
+        deepAR.switchEffect(0, 'slot', './effects/mask', function() {
+            // effect loaded
+          });
         video.play();
         btn.innerHTML = "Pause";
       } else {
@@ -213,10 +216,6 @@
           deepAR.startVideo(true);
 
           // or we can setup the video element externally and call deepAR.setVideoElement (see startExternalVideo function below)
-
-          deepAR.switchEffect(0, 'slot', './effects/mask', function() {
-            // effect loaded
-          });
         }
       });
 
