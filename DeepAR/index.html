@@ -150,8 +150,8 @@
 
     video.addEventListener('ended',myHandler,false);
     function myHandler(e) {
-      document.getElementById("btn").disabled = true;
-      document.getElementById("myVideo").disabled = true;
+      document.getElementById("btn").remove();
+      document.getElementById("myVideo").remove();
     }
     function myFunction() {
       if (video.paused) {
